@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/default_font"
+                android:title="@string/default_font"
+                android:icon="@drawable/ic_default_font"/>
+
+        <item
+                android:id="@+id/custom_font"
+                android:title="@string/custom_font"
+                android:icon="@drawable/ic_custom_font"/>
+    </group>
+
+    <item
+            android:title="@string/submenu">
+        <menu>
+            <item
+                    android:title="@string/submenu_1"
+                    android:icon="@drawable/ic_submenu"/>
+            <item
+                    android:title="@string/submenu_2"
+                    android:icon="@drawable/ic_submenu"/>
+            <item
+                    android:title="@string/submenu_3"
+                    android:icon="@drawable/ic_submenu"/>
+            <item
+                    android:title="@string/submenu_4"
+                    android:icon="@drawable/ic_submenu"/>
+        </menu>
+    </item>
+</menu>
