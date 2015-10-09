@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">Design Support Library Demo</string>
+
+    <!-- Navigation Drawer -->
     <string name="navigation_drawer_text">Design Support Library Example</string>
 
     <string name="default_font">Default font</string>
     <string name="custom_font">Custom font</string>
+
     <string name="submenu">Submenu</string>
     <string name="submenu_1">Submenu item 1</string>
     <string name="submenu_2">Submenu item 2</string>
     <string name="submenu_3">Submenu item 3</string>
     <string name="submenu_4">Submenu item 4</string>
+
+
+    <string name="custom_font_name">ModernGermanHandwriting.ttf</string>
 </resources>
