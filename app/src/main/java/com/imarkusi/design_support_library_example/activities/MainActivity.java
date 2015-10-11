@@ -18,9 +18,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -146,6 +148,15 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         }
         tabLayout.setupWithViewPager(viewPager);
+
+        for (int i = 0, size = tabLayout.getTabCount(); i < size; i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            assert tab != null;
+            LinearLayout customTab = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.tab_custom, null);
+            TextView textView = ButterKnife.findById(customTab, R.id.text1);
+            textView.setText(tab.getText());
+            tab.setCustomView(customTab);
+        }
     }
 
     private void showSnackbar() {
