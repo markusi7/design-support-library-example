@@ -12,6 +12,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -19,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -116,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ListFragment(), R.string.first_tab_name);
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        initTabLayout(adapter);
     }
 
     private void setupViewPager(int tabsCount) {
@@ -125,7 +126,25 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < tabsCount; i++) {
             adapter.addFragment(new ListFragment(), getString(R.string.tab_name, i + 1));
         }
-        viewPager.setAdapter(adapter);
+        initTabLayout(adapter);
+    }
+
+    private void initTabLayout(PagerAdapter pagerAdapter) {
+        viewPager.setAdapter(pagerAdapter);
+
+        LinearLayout slidingTabStrip = (LinearLayout) tabLayout.getChildAt(0);
+        slidingTabStrip.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+        int stripWidth = slidingTabStrip.getMeasuredWidth();
+        int tabLayoutWidth = tabLayout.getMeasuredWidth();
+
+        if (stripWidth <= tabLayoutWidth) {
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+            tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        } else {
+            tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+            tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        }
         tabLayout.setupWithViewPager(viewPager);
     }
 

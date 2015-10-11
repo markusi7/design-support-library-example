@@ -34,7 +34,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         fragmentTitles.add(App.getInstance().getString(fragmentTitleResId));
     }
 
-
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
