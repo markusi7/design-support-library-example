@@ -13,5 +13,11 @@
     <string name="submenu_3">Submenu item 3</string>
     <string name="submenu_4">Submenu item 4</string>
 
+    <string name="first_tab_name">One and only tab</string>
+    <string name="tab_name">%d. tab</string>
+
+    <string name="tab_count">Number of tabs: %d</string>
+    <string name="dismiss">Dismiss</string>
+
     <string name="custom_font_name">ModernGermanHandwriting.ttf</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.imarkusi.design_support_library_example.factories;
 
-import com.imarkusi.design_support_library_example.R;
 import com.imarkusi.design_support_library_example.models.ListItem;
 
 /**
@@ -14,16 +13,12 @@ public class ListItemFactory {
 
     private static final String SUBTITLE = "%d. Subtitle and some text just to fill the space";
 
-    private static int counter;
-
     private ListItemFactory() {
     }
 
-    public static ListItem createListItem() {
-        counter++;
-        String title = String.format(TITLE, counter);
-        String subtitle = String.format(SUBTITLE, counter);
-        int drawableResId = R.drawable.list_item;
-        return new ListItem(title, subtitle, drawableResId);
+    public static ListItem createListItem(int index) {
+        String title = String.format(TITLE, index);
+        String subtitle = String.format(SUBTITLE, index);
+        return new ListItem(title, subtitle);
     }
 }

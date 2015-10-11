@@ -1,7 +1,5 @@
 package com.imarkusi.design_support_library_example.models;
 
-import android.support.annotation.DrawableRes;
-
 /**
  * Created on 11/10/15.
  *
@@ -13,12 +11,9 @@ public class ListItem {
 
     private String subtitle;
 
-    private int drawableResId;
-
-    public ListItem(String title, String subtitle, @DrawableRes int drawableResId) {
+    public ListItem(String title, String subtitle) {
         this.title = title;
         this.subtitle = subtitle;
-        this.drawableResId = drawableResId;
     }
 
     public String getTitle() {
@@ -27,9 +22,5 @@ public class ListItem {
 
     public String getSubtitle() {
         return subtitle;
-    }
-
-    public int getDrawableResId() {
-        return drawableResId;
     }
 }
