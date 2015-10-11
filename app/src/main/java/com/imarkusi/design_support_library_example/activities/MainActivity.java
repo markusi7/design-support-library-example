@@ -11,6 +11,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -21,6 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -154,9 +156,38 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayout customTab = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.tab_custom, null);
                 TextView textView = ButterKnife.findById(customTab, R.id.text1);
                 textView.setText(tab.getText());
+                //because listener is not triggered when initialised
+                if ( i == 0){
+                    ImageView imageView = ButterKnife.findById(customTab, R.id.icon);
+                    imageView.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_tab_black));
+                }
                 tab.setCustomView(customTab);
             }
         }
+        TabLayout.OnTabSelectedListener listener = new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getCustomView() != null) {
+                    ImageView imageView = ButterKnife.findById(tab.getCustomView(), R.id.icon);
+                    imageView.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_tab_black));
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                if (tab.getCustomView() != null) {
+                    ImageView imageView = ButterKnife.findById(tab.getCustomView(), R.id.icon);
+                    imageView.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_tab_white));
+                }
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        };
+        tabLayout.setOnTabSelectedListener(listener);
     }
 
     private void showSnackbar() {
