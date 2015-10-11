@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         if (snackbar != null && snackbar.isShown()) {
             snackbar.dismiss();
         }
-        if (tabLayout.getTabCount() != TAB_LIMIT) {
+        if (tabLayout.getTabCount() <= TAB_LIMIT - 1) {
             snackbar = Snackbar.make(createTabButton,
                     String.format(getString(R.string.tab_count), tabLayout.getTabCount()), Snackbar.LENGTH_LONG)
                     .setAction(R.string.dismiss, new View.OnClickListener() {
@@ -226,11 +226,10 @@ public class MainActivity extends AppCompatActivity {
         boolean onlyOneTab = numberOfTabs == 1;
         if (onlyOneTab) {
             setupViewPager();
-        } else {
+        } else if (numberOfTabs - 1 != TAB_LIMIT) {
             setupViewPager(numberOfTabs);
         }
         showSnackbar();
-        createTabButton.setVisibility(tabLayout.getTabCount() == TAB_LIMIT ? View.GONE : View.VISIBLE);
         deleteTabButton.setVisibility(onlyOneTab ? View.GONE : View.VISIBLE);
     }
 }
