@@ -18,6 +18,7 @@
 
     <string name="tab_count">Number of tabs: %d</string>
     <string name="dismiss">Dismiss</string>
+    <string name="tab_limit">8 is enough :)</string>
 
     <string name="custom_font_name">ModernGermanHandwriting.ttf</string>
 </resources>

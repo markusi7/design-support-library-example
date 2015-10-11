@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String USE_CUSTOM_FONTS = "use_custom_fonts";
 
+    private static final int TAB_LIMIT = 8;
+
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
@@ -131,15 +133,19 @@ public class MainActivity extends AppCompatActivity {
         if (snackbar != null && snackbar.isShown()) {
             snackbar.dismiss();
         }
-        //first argument is any view within Coordinator layout or the windows decors content view
-        snackbar = Snackbar.make(tabLayout,
-                String.format(getString(R.string.tab_count), tabLayout.getTabCount()), Snackbar.LENGTH_LONG)
-                .setAction(R.string.dismiss, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        snackbar.dismiss();
-                    }
-                });
+        if (tabLayout.getTabCount() != TAB_LIMIT) {
+            snackbar = Snackbar.make(createTabButton,
+                    String.format(getString(R.string.tab_count), tabLayout.getTabCount()), Snackbar.LENGTH_LONG)
+                    .setAction(R.string.dismiss, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snackbar.dismiss();
+                        }
+                    });
+
+        } else {
+            snackbar = Snackbar.make(tabLayout, R.string.tab_limit, Snackbar.LENGTH_LONG);
+        }
         snackbar.show();
 
     }
@@ -163,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
             setupViewPager(numberOfTabs);
         }
         showSnackbar();
+        createTabButton.setVisibility(tabLayout.getTabCount() == TAB_LIMIT ? View.GONE : View.VISIBLE);
         deleteTabButton.setVisibility(onlyOneTab ? View.GONE : View.VISIBLE);
     }
 }
