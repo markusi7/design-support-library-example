@@ -118,9 +118,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager() {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ListFragment(), R.string.first_tab_name);
-        initTabLayout(adapter);
+        setupViewPager(1);
     }
 
     private void setupViewPager(int tabsCount) {
@@ -152,10 +150,12 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0, size = tabLayout.getTabCount(); i < size; i++) {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             assert tab != null;
-            LinearLayout customTab = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.tab_custom, null);
-            TextView textView = ButterKnife.findById(customTab, R.id.text1);
-            textView.setText(tab.getText());
-            tab.setCustomView(customTab);
+            if ( i % 2 == 0){
+                LinearLayout customTab = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.tab_custom, null);
+                TextView textView = ButterKnife.findById(customTab, R.id.text1);
+                textView.setText(tab.getText());
+                tab.setCustomView(customTab);
+            }
         }
     }
 

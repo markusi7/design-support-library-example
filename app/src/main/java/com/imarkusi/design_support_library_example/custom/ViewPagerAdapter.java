@@ -1,8 +1,5 @@
 package com.imarkusi.design_support_library_example.custom;
 
-import com.imarkusi.design_support_library_example.App;
-
-import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -27,11 +24,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public void addFragment(Fragment fragment, String fragmentTitle) {
         fragments.add(fragment);
         fragmentTitles.add(fragmentTitle);
-    }
-
-    public void addFragment(Fragment fragment, @StringRes int fragmentTitleResId) {
-        fragments.add(fragment);
-        fragmentTitles.add(App.getInstance().getString(fragmentTitleResId));
     }
 
     @Override
