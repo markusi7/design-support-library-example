@@ -1,11 +1,13 @@
 package com.imarkusi.design_support_library_example.fragments;
 
 import com.imarkusi.design_support_library_example.R;
+import com.imarkusi.design_support_library_example.activities.DetailsActivity;
 import com.imarkusi.design_support_library_example.adapters.ListItemAdapter;
 import com.imarkusi.design_support_library_example.factories.ListItemFactory;
 import com.imarkusi.design_support_library_example.listener.ItemClickListener;
 import com.imarkusi.design_support_library_example.models.ListItem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -36,7 +38,10 @@ public class ListFragment extends Fragment {
     private ItemClickListener<ListItem> itemClickListener = new ItemClickListener<ListItem>() {
         @Override
         public void onItemClick(ListItem item) {
-            //TODO start details activity;
+            Intent intent = new Intent(getActivity(), DetailsActivity.class);
+            intent.putExtra(DetailsActivity.TITLE,item.getTitle());
+            intent.putExtra(DetailsActivity.SUBTITLE,item.getSubtitle());
+            startActivity(intent);
         }
     };
 

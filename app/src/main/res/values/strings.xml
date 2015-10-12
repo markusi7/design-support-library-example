@@ -21,4 +21,19 @@
     <string name="tab_limit">8 is enough :)</string>
 
     <string name="custom_font_name">ModernGermanHandwriting.ttf</string>
+
+    <string-array name="collapsing_toolbar_layout_params">
+        <item>COLLAPSE_MODE_OFF</item>
+        <item>COLLAPSE_MODE_PARALLAX</item>
+        <item>COLLAPSE_MODE_PIN</item>
+    </string-array>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus euismod turpis nec pharetra. Morbi consectetur eget dolor vel lobortis. Duis ante ligula, accumsan in convallis vitae, ullamcorper quis dui. Suspendisse ultricies tortor tortor, ut porta nisi consequat sit amet. Duis facilisis luctus leo, sed pharetra augue aliquam at. Morbi quam eros, tristique consectetur leo ac, ullamcorper congue turpis. Aenean id quam vel lacus interdum finibus vitae a urna. In eget tellus erat. Sed et sapien leo.
+
+        Suspendisse mollis iaculis fringilla. Sed malesuada purus sapien, at lobortis nisi finibus sit amet. Quisque pellentesque dapibus libero ut tristique. Quisque sit amet bibendum mauris, nec facilisis nibh. Proin mollis arcu eleifend odio cursus volutpat. Nullam lectus enim, finibus laoreet neque quis, auctor lobortis quam. Sed viverra dolor sodales quam luctus lobortis. Proin at orci quis arcu porta laoreet vel sit amet nibh. Mauris a rutrum ipsum. Nulla elit felis, blandit sed scelerisque eu, bibendum sed ex. Sed sed ante egestas, tincidunt justo nec, semper enim.
+
+        Donec auctor libero nec bibendum sollicitudin. Nunc condimentum ipsum vitae dui sodales, eget vulputate est iaculis. Maecenas blandit tempor tortor, quis dictum lacus aliquet eu. Fusce faucibus eu lorem ut porttitor. Phasellus lacinia luctus tortor at finibus. Mauris finibus lacinia ipsum nec pharetra. Etiam vitae libero augue. Nullam aliquet vestibulum sem eget rhoncus. Nunc hendrerit accumsan dolor et finibus. Nunc malesuada ipsum non enim euismod, nec scelerisque dui tempus. In elit mauris, aliquet in metus sit amet, porttitor faucibus urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur tincidunt in nisi non laoreet. Ut vehicula finibus diam non varius.</string>
+    <string name="enter_header_title">Enter header title</string>
+    <string name="error_header_title">Title must not be empty!</string>
+    <string name="submit">Submit</string>
 </resources>

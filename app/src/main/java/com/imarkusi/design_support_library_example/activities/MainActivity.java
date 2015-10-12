@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.button_create_tab, R.id.button_delete_tab})
-    void onFloatingActionButtonClikc(FloatingActionButton floatingActionButton) {
+    void onFloatingActionButtonClick(FloatingActionButton floatingActionButton) {
         int numberOfTabs = tabLayout.getTabCount();
         boolean tabsCountIncremented = floatingActionButton.getId() == R.id.button_create_tab;
         numberOfTabs += tabsCountIncremented ? 1 : -1;

@@ -41,6 +41,12 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
         final ListItem item = items.get(position);
         holder.title.setText(item.getTitle());
         holder.subtitle.setText(item.getSubtitle());
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.onItemClick(item);
+            }
+        });
     }
 
     @Override
@@ -49,6 +55,9 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+
+        @Bind(R.id.list_item)
+        View item;
 
         @Bind(R.id.title)
         TextView title;
