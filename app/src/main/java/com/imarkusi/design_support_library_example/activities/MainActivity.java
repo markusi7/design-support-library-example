@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = ButterKnife.findById(this, R.id.toolbar);
         setSupportActionBar(toolbar);
+        FontHelper.changeToolbarFont(toolbar);
 
         final ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
@@ -207,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             snackbar = Snackbar.make(tabLayout, R.string.tab_limit, Snackbar.LENGTH_LONG);
         }
+        FontHelper.applyStyleToSnackbar(snackbar);
         snackbar.show();
 
     }

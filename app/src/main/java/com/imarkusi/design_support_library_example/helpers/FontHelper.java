@@ -22,7 +22,6 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
@@ -55,7 +54,8 @@ public class FontHelper {
 
     public static void changeToolbarFont(Toolbar toolbar) {
         TextView textView = (TextView) toolbar.getChildAt(0);
-        textView.setTypeface(getTypeface(R.string.custom_font_name));
+        //  textView.setTypeface(getTypeface(R.string.custom_font_name));
+        textView.setTextColor(ContextCompat.getColor(App.getInstance(), android.R.color.white));
     }
 
     public static void changeNavigationDrawerFonts(NavigationView navigationView) {
@@ -84,13 +84,13 @@ public class FontHelper {
 
     public static void applyStyleToSnackbar(Snackbar snackbar) {
         View view = snackbar.getView();
-        view.setBackgroundColor(ContextCompat.getColor(view.getContext(), R.color.primary_dark));
+        view.setBackgroundColor(ContextCompat.getColor(view.getContext(), android.R.color.white));
         TextView textView = ButterKnife.findById(view, android.support.design.R.id.snackbar_text);
-        setTextViewStyle(textView, R.string.custom_font_name, android.R.color.white);
-        Button actionTextView = ButterKnife.findById(view, android.support.design.R.id.snackbar_action);
-        if (actionTextView != null) {
-            setTextViewStyle(actionTextView, R.string.custom_font, android.R.color.white);
-        }
+        //setTextViewStyle(textView, R.string.custom_font_name, android.R.color.white);
+//        Button actionTextView = ButterKnife.findById(view, android.support.design.R.id.snackbar_action);
+//        if (actionTextView != null) {
+//            setTextViewStyle(actionTextView, R.string.custom_font, android.R.color.white);
+//        }
     }
 
     private static void setTextViewStyle(TextView textView, @StringRes int fontResId, @ColorRes int colorResId) {
