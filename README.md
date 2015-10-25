@@ -9,7 +9,7 @@ Custom header, menu with groups and subitems.
 Setting up with ViewPager. Custom icons, examples of changing tab gravity and scroll mode.
 
 ##Text Input Layout
-Basic implementation, showing hints and errors.
+Basic implementation, showing hints, errors and character count.
 
 ##Coordinator Layout
 
