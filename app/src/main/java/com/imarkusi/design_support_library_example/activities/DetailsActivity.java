@@ -76,6 +76,7 @@ public class DetailsActivity extends Activity {
         }
         //or bind it via ButterKnife
         editText = textInputLayout.getEditText();
+        textInputLayout.setCounterMaxLength(16);
         //display title when scrim is drawn
         appBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
@@ -110,8 +111,10 @@ public class DetailsActivity extends Activity {
 
     @OnClick(R.id.submit)
     void onSubmitButtonClicked() {
-        if (editText.getText() == null || editText.getText().toString().equals("")) {
+        if (editText.getText().toString().equals("")) {
             textInputLayout.setError(getString(R.string.error_header_title));
+        } else if (editText.getText().toString().length() > textInputLayout.getCounterMaxLength()) {
+            textInputLayout.setError(getString(R.string.error_text_length));
         } else {
             textInputLayout.setError(null);
             launchIntent();

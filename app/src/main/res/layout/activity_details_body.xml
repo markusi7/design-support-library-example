@@ -44,7 +44,8 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/default_padding"
                     app:errorEnabled="true"
-                    app:hintAnimationEnabled="true">
+                    app:hintAnimationEnabled="true"
+                    app:counterEnabled="true">
 
                 <EditText
                         android:layout_width="match_parent"

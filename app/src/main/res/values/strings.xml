@@ -35,5 +35,6 @@
         Donec auctor libero nec bibendum sollicitudin. Nunc condimentum ipsum vitae dui sodales, eget vulputate est iaculis. Maecenas blandit tempor tortor, quis dictum lacus aliquet eu. Fusce faucibus eu lorem ut porttitor. Phasellus lacinia luctus tortor at finibus. Mauris finibus lacinia ipsum nec pharetra. Etiam vitae libero augue. Nullam aliquet vestibulum sem eget rhoncus. Nunc hendrerit accumsan dolor et finibus. Nunc malesuada ipsum non enim euismod, nec scelerisque dui tempus. In elit mauris, aliquet in metus sit amet, porttitor faucibus urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur tincidunt in nisi non laoreet. Ut vehicula finibus diam non varius.</string>
     <string name="enter_header_title">Enter header title</string>
     <string name="error_header_title">Title must not be empty!</string>
+    <string name="error_text_length">Too many characters!</string>
     <string name="submit">Submit</string>
 </resources>
